@@ -44,7 +44,7 @@ class MainBG extends PluginBase implements Listener {
                 $this->getServer()->generateLevel($this->cfg->getNested('lobby.world')); 
                } 
                 $this->getLogger()->info(TextFormat::GREEN."A shooting action minigame, Battlegrounds is online!"); 
-                $this->checkAgain(); 
+              /**  $this->checkAgain(); **/
               } 
 
               public function onDisable(): void{ 
