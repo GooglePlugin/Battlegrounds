@@ -123,7 +123,7 @@ class ArenaScheduler extends Task {
 			if($this->gameStart >= 2){
 				foreach($this->arena->lobbyp as $p){
 					$p->addTitle(TextFormat::GREEN . "Prepare for your wings!", TextFormat::RED . $this->gameStart, 20, 20, 20);
-                                        $p->addSubtitle(TextFormat::WHITE . "Ready, players!");
+                    $p->addSubtitle(TextFormat::WHITE . "Ready, players!");
 				}
 		    }
 			
@@ -195,8 +195,5 @@ class ArenaScheduler extends Task {
 				
 			}
 		}
-		
-		
-		
     }
 }

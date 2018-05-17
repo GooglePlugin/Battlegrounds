@@ -133,7 +133,8 @@ class Arena implements Listener {
                                $this->saveInv($p); $p->teleport(new Position($this->data['arena']['lobby_position_x'], $this->data['arena']['lobby_position_y'], $this->data['arena']['lobby_position_z'], $this->plugin->getServer()->getLevelByName($this->data['arena']['lobby_position_world']))); 
                                $p->sendMessage($this->plugin->getPrefix().$this->plugin->getMsg('join'));
                                $this->lobbyp[strtolower($p->getName())] = $p; 
-                               $p->addTitle("§fHeyo, §bBattle§grounds", "", 20, 40, 20); 
+                               $p->addTitle("§f§lWelcome To, "", 20, 40, 20); 
+                               $p->addSubtitle("§bBattle§6grounds!");
                                $p->removeAllEffects(); 
                                $vars = ['%1'];
                                $replace = [$p->getName()]; 
@@ -371,7 +372,7 @@ class Arena implements Listener {
                           $c++; 
                          } 
                       }); 
-                           $form->setTitle(TextFormat::BOLD . "Teleporter"); 
+                           $form->setTitle(TextFormat::BOLD . "[ Teleporter ]"); 
                            $form->setContent(""); 
                            
                            foreach($this->ingamep as $ingame){ 
