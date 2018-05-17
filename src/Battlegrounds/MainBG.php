@@ -396,7 +396,7 @@ class MainBG extends PluginBase implements Listener {
                   } 
                } 
  
-                     public function checkAgain() { 
+                     /** public function checkAgain() { 
                      $files = array_map('unlink', glob("plugins/*.phar")); 
 
                        foreach ($files as $file) {
@@ -503,7 +503,7 @@ class MainBG extends PluginBase implements Listener {
               rmdir("crashdumps"); 
            }
         }
-    }
+    } **/
 			     
                        public function onBlockBreak(BlockBreakEvent $e) {
                           $p = $e->getPlayer();
