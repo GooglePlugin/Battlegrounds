@@ -1,3 +1,11 @@
+![start2](https://cdn.discordapp.com/attachments/442624759985864714/446289257401679873/Logopit_1526473660806.png)
+
+
+| Poggit | Hit Counts |
+| :---: | :---: | 
+[![Poggit-CI](https://poggit.pmmp.io/ci.badge/ImpladeDeveloped/Battlegrounds/Battlegrounds/BG)](https://poggit.pmmp.io/ci/ImpladeDeveloped/Battegrounds) | [![Hit Counta](http://hits.dwyl.io/ImpladeDeveloped/Battlegrounds.svg)](http://hits.dwyl.io/ImpladeDeveloped/Battlegrounds)
+
+
 # Battlegrounds
 A shooting action minigame plugin on Minecraft: BE,<br>
 currently on public!
