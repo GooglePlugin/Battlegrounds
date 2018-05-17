@@ -18,9 +18,9 @@ starting: "&aThe game will start in §f%1 §aseconds....."
 kick_from_game: "&cYou have been kicked from Battlegrounds game for %1"
 game_full: "&cThis game is currently full!"
 ingame: "&cThis game is currently running!"
-enable_setup_mode: "&6You are now in Battleground setup mode!\n&a-> To leave the game, type using &l&o'done'"
+enable_setup_mode: "&6You are now in Battleground setup mode!\n&f- &aTo see a setup help, type §d'help' \n&f- §aTo leave the setup mode, type §b'done'"
 disable_setup_mode: '&aThe arena is saved!'
-arena_in_setup: "&cThe arena is on setup mode!"
+arena_in_setup: "&cThe arena is now on setup mode!"
 #reward for win
 get_money: "&aYou got %1 money!"
 #end game message
@@ -34,17 +34,17 @@ not_enough_players: "&cWe need more players!"
 has_not_permission: "&cYou do not have permission to use this command!"
 
 # Invalid Arguments on Setup Mode #
-invalid_arguments: "&cInvalid Arguments!\n&6Type: &a&o&lhelp"
-help: "&6use /bg help"
-join_help: "&6use /bg join &a[arena name]"
-leave_help: "&6use /bg leave &a[arena name]"
-start_help: "&6use /bg start &a[arena name]"
-stop_help: "&6use /bg stop &a[arena name]"
-kick_help: "&6use /bg kick &a[arena name] [player name]"
-set_help: "&6use /bg set &a[arena name]"
-create_help: "&6use /bg create &a[arena name]"
-delete_help: "&6use /bg delete &a[arena name]"
-setlobby_help: "&6use: &asetlobby"
+invalid_arguments: "&cPlease type §f'§ehelp§f' §cfor setup help!"
+help: "&6Battlegrounds §fcommand usage: /bg help"
+join_help: "&6/bg join &a[arena name]"
+leave_help: "&6/bg leave &a[arena name]"
+start_help: "&6/bg start &a[arena name]"
+stop_help: "&6 /bg stop &a[arena name]"
+kick_help: "&6 /bg kick &a[arena name] [player name]"
+set_help: "&6 /bg set &a[arena name]"
+create_help: "&6 /bg create &a[arena name]"
+delete_help: "&6 /bg delete &a[arena name]"
+setlobby_help: "&6Please type: &asetlobby"
 arena_running: "&cArena is running now"
 use_cmd_in_game: "&6You can use this only in-game"
 arena_not_running: "&6Arena is not running!"
@@ -76,17 +76,17 @@ enable: "&aArena has been successfully updated"
 ########################################
 # Message Commands While On Setup Mode #
 ########################################
-statusline_help: "&6use: &astatusline &b[line] [text]"
-allowstatus_help: "&6use: &aallowstatus &b[true/false]"
-signupdatetime_help: "&6use: &asignupdatetime &b[seconds]"
-world_help: "&6use: &aworld &b[world name]"
-allowspectator_help: "&6use: &aallowspectator &b[true/false]"
-maxtime_help: "&6use: &amaxtime &b[seconds]"
-maxplayers_help: "&6use: &amaxplayers &b[amount]"
-minplayers_help: "&6use: &aminplayers &b[amount]"
-starttime_help: "&6use: &astarttime &b[seconds]"
-time_help: "&6use: &atime &b[true/day/night/TICKS]"
-enable_help: "&6use: &aenable &b[true/false]"
+statusline_help: "&6Please type: &astatusline &b[line] [text]"
+allowstatus_help: "&6Please type: &aallowstatus &b[true/false]"
+signupdatetime_help: "&6Please type: &asignupdatetime &b[seconds]"
+world_help: "&6Please type: &aworld &b[world name]"
+allowspectator_help: "&6Please type: &aallowspectator &b[true/false]"
+maxtime_help: "&6Please type: &amaxtime &b[seconds]"
+maxplayers_help: "&6Please type: &amaxplayers &b[amount]"
+minplayers_help: "&6Please type: &aminplayers &b[amount]"
+starttime_help: "&6Please type: &astarttime &b[seconds]"
+time_help: "&6Please type: &atime &b[true/day/night/TICKS]"
+enable_help: "&6Please type: &aenable &b[true/false]"
 
 ##################################
 # Battlegrounds Help Command Messages #
@@ -124,5 +124,5 @@ help_minplayers: "\n- &2minplayers &b[count] &l&5»&r&f Set players minimal coun
 ######################
 # Other setup messages #
 ######################
-break_block: "&aBreak a block"
-break_sign: "&aBreak a sign"
+break_block: "&aFind and break a block!"
+break_sign: "&aFind and break a block!"
