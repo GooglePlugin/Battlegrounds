@@ -133,7 +133,7 @@ class Arena implements Listener {
                                $this->saveInv($p); $p->teleport(new Position($this->data['arena']['lobby_position_x'], $this->data['arena']['lobby_position_y'], $this->data['arena']['lobby_position_z'], $this->plugin->getServer()->getLevelByName($this->data['arena']['lobby_position_world']))); 
                                $p->sendMessage($this->plugin->getPrefix().$this->plugin->getMsg('join'));
                                $this->lobbyp[strtolower($p->getName())] = $p; 
-                               $p->addTitle("�fHeyo, �bBattle�grounds", "", 20, 40, 20); 
+                               $p->addTitle("§fHeyo, §bBattle§grounds", "", 20, 40, 20); 
                                $p->removeAllEffects(); 
                                $vars = ['%1'];
                                $replace = [$p->getName()]; 
@@ -163,7 +163,8 @@ class Arena implements Listener {
                            $this->spec[strtolower($p->getName())] = $p;
                           } 
                        }); 
-                          $form->setTitle(TextFormat::BOLD . "Battlegrounds Information"); $form->setContent("This game is currently on running now. Do you want to spectate some players?\n\n\n"); 
+                          $form->setTitle(TextFormat::BOLD . "Battlegrounds Information"); 
+                          $form->setContent("This game is currently on running now. Do you want to spectate some players?\n\n\n"); 
                           $form->addButton("Yeah, sure!"); 
                           $form->addButton("No, thanks!"); 
                           $form->sendToPlayer($p); 
@@ -180,7 +181,8 @@ class Arena implements Listener {
                          unset($this->ingamep[strtolower($p->getName())]);
                          $p->teleport(new Position($this->data['arena']['leave_position_x'], $this->data['arena']['leave_position_y'], $this->data['arena']['leave_position_z'], $this->plugin->getServer()->getLevelByName($this->data['arena']['leave_position_world']))); 
                          $p->setSpawn(new Position($this->data['arena']['leave_position_x'], $this->data['arena']['leave_position_y'], $this->data['arena']['leave_position_z'], $this->plugin->getServer()->getLevelByName($this->data['arena']['leave_position_world']))); 
-                        $this->messageArenaPlayers(str_replace("%1", $p->getName(), $this->plugin->getMsg('leave_others'))); $this->checkAlive(); 
+                        $this->messageArenaPlayers(str_replace("%1", $p->getName(), $this->plugin->getMsg('leave_others'))); 
+                         $this->checkAlive(); 
                       }
                          if($this->getPlayerMode($p) == 2){
                         unset($this->spec[strtolower($p->getName())]); 
@@ -190,13 +192,16 @@ class Arena implements Listener {
                        if(isset($this->plugin->players[strtolower($p->getName())]['arena'])){ 
                        unset($this->plugin->players[strtolower($p->getName())]['arena']); 
                     }
-                       if(!$this->plugin->getServer()->isLevelGenerated($this->data['arena']['leave_position_world'])){ $this->plugin->getServer()->generateLevel($this->data['arena']['leave_position_world']); 
+                       if(!$this->plugin->getServer()->isLevelGenerated($this->data['arena']['leave_position_world'])){ 
+                       $this->plugin->getServer()->generateLevel($this->data['arena']['leave_position_world']); 
                    } 
                        if(!$this->plugin->getServer()->isLevelLoaded($this->data['arena']['leave_position_world'])){ 
                        $this->plugin->getServer()->loadLevel($this->data['arena']['leave_position_world']); 
                     } 
                        $p->sendMessage($this->plugin->getPrefix().$this->plugin->getMsg('leave')); 
-                       $this->loadInv($p); $p->setGamemode(0); $p->removeAllEffects(); 
+                       $this->loadInv($p); 
+                       $p->setGamemode(0); 
+                       $p->removeAllEffects(); 
                      } 
                      
                      public function startGame(){ 
@@ -204,7 +209,8 @@ class Arena implements Listener {
 
                      foreach($this->lobbyp as $p){ 
                      $p->setGamemode(0); 
-                     $level = $this->plugin->getServer()->getLevelByName($this->data['arena']['arena_world']); $level->setBlockIdAt($this->data['arena']['join_position_x'], $this->data['arena']['join_position_y'] - 1, $this->data['arena']['join_position_z'], 57); 
+                     $level = $this->plugin->getServer()->getLevelByName($this->data['arena']['arena_world']); 
+                     $level->setBlockIdAt($this->data['arena']['join_position_x'], $this->data['arena']['join_position_y'] - 1, $this->data['arena']['join_position_z'], 57); 
                      $level->setBlockIdAt($this->data['arena']['join_position_x'] + 1, $this->data['arena']['join_position_y'] - 1, $this->data['arena']['join_position_z'], 57); 
                      $level->setBlockIdAt($this->data['arena']['join_position_x'] - 1, $this->data['arena']['join_position_y'] - 1, $this->data['arena']['join_position_z'], 57); 
                      $level->setBlockIdAt($this->data['arena']['join_position_x'], $this->data['arena']['join_position_y'] - 1, $this->data['arena']['join_position_z'] + 1, 57); 
@@ -618,7 +624,8 @@ class Arena implements Listener {
                   $level->setBlockIdAt($x, $p->y + 2, $p->z - 2, 5);
                 } 
                   if($yaw >= 46 && $yaw <= 135){ 
-                  $x = $p->x - 3; $level->setBlockIdAt($x, $p->y, $p->z, 5); 
+                  $x = $p->x - 3;
+                  $level->setBlockIdAt($x, $p->y, $p->z, 5); 
                   $level->setBlockIdAt($x, $p->y, $p->z + 1, 5); 
                   $level->setBlockIdAt($x, $p->y, $p->z - 1, 5); 
                   $level->setBlockIdAt($x, $p->y, $p->z + 2, 5);
@@ -732,7 +739,8 @@ class Arena implements Listener {
                  $level->setBlockDataAt($p->x - 1, $p->y + 2, $z + 2, 2); 
                 } 
                  if($yaw >= 136 && $yaw <= 225){ 
-                 $z = $p->z - 1; $level->setBlockIdAt($p->x, $p->y, $z, 53); 
+                 $z = $p->z - 1;
+                 $level->setBlockIdAt($p->x, $p->y, $z, 53); 
                  $level->setBlockIdAt($p->x + 1, $p->y, $z, 53); 
                  $level->setBlockIdAt($p->x - 1, $p->y, $z, 53); 
                  $level->setBlockDataAt($p->x, $p->y, $z, 3); 
@@ -811,7 +819,8 @@ class Arena implements Listener {
                    if($p instanceof Player){ 
                    if($this->getPlayerMode($p) === 0 || $this->getPlayerMode($p) === 2){ 
                    $e->setDeathMessage(""); 
-                   $e->setDrops([]); } 
+                   $e->setDrops([]); 
+                   } 
                    if($this->getPlayerMode($p) === 1){ 
                    $e->setDeathMessage(""); 
                    if(count($this->ingamep) == 2){
@@ -861,7 +870,8 @@ class Arena implements Listener {
                     if($block->getId() == 17){ 
                     $level = $p->getLevel(); 
                     $level->setBlockIdAt($block->x, $block->y, $block->z, 0);
-                    $item = Item::get(5, 0, 1); $itemName = $item->setCustomName(TextFormat::AQUA . "[ Wall Builder ]"); 
+                    $item = Item::get(5, 0, 1); 
+                    $itemName = $item->setCustomName(TextFormat::AQUA . "[ Wall Builder ]"); 
                     $p->getInventory()->addItem($itemName); $item = Item::get(53, 0, 1); 
                     $itemName = $item->setCustomName(TextFormat::AQUA . "[ Stairs Builder ]"); 
                     $p->getInventory()->addItem($itemName);
