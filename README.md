@@ -28,7 +28,7 @@ currently on public!
 - [x] Finding an errors!
 
 ```
-This plugin is from the scammer developer,<br>
+This plugin is from the scammer developer,
 (SonsaYT, as his former name is FreakingDev)
 😂😂 Updated on 16 May 2018 😂😂
 ```
