@@ -841,6 +841,7 @@ class Arena implements Listener {
                 unset($this->ingamep[strtolower($p->getName()) ]);
                 $this->spec[strtolower($p->getName()) ] = $p;
 		Entity::createEntity("DeathAnimation", $p->getLevel(), new CompoundTag(), $p)->spawnToAll();
+		$this->getServer()->getScheduler()->scheduleDelayedTask(new BattleParticle($this, $p), 20);
                 $ingame = array_merge($this->lobbyp, $this->ingamep, $this->spec);
                 foreach ($ingame as $pl) {
                     $pl->sendMessage($this->plugin->getPrefix() . str_replace(['%2', '%1'], [count($this->ingamep), $p->getName() ], $this->plugin->getMsg('death')));
@@ -907,12 +908,14 @@ class Arena implements Listener {
     
     public function onQuit(PlayerQuitEvent $e) {
         if ($this->getPlayerMode($e->getPlayer()) !== false) {
+	$this->getServer()->getScheduler()->scheduleDelayedTask(new BattleParticle($this, $p), 20);
             $this->leaveArena($e->getPlayer());
         }
     }
     
     public function onKick(PlayerKickEvent $e) {
         if ($this->getPlayerMode($e->getPlayer()) !== false) {
+	$this->getServer()->getScheduler()->scheduleDelayedTask(new BattleParticle($this, $p), 20);
             $this->leaveArena($e->getPlayer());
         }
     }
