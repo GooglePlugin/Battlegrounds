@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Battlegrounds;
 
 use pocketmine\plugin\PluginBase;
@@ -19,9 +21,11 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerKickEvent;
 use pocketmine\plugin\Plugin;
+use pocketmine\entity\Entity;
 
 use Battlegrounds\arenas\Arena;
 use Battlegrounds\ConfigManager;
+use Battlegrounds\entity\DeathAnimation;
 
 class MainBG extends PluginBase implements Listener {
 	
@@ -39,6 +43,7 @@ class MainBG extends PluginBase implements Listener {
         $this->registerEconomy();
         $this->checkArenas();
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+	Entity::registerEntity(DeathAnimation::class, true);
         if (!$this->getServer()->isLevelGenerated($this->cfg->getNested('lobby.world'))) {
             $this->getServer()->generateLevel($this->cfg->getNested('lobby.world'));
         }
