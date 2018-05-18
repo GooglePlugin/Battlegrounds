@@ -10,7 +10,7 @@ use pocketmine\math\Vector3;
 
 use Battlegrounds\arenas\Arena;
 
-class ArenaSchedule extends Task {
+class ArenaScheduler extends Task {
     
     private $mainTime;
     private $time = 0;
