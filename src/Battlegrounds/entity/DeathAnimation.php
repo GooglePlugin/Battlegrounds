@@ -1,6 +1,6 @@
 <?php
 
-namespace Battlegrounds;
+namespace Battlegrounds\entity;
 
 use pocketmine\nbt\tag\{
   ListTag, FloatTag, DoubleTag, CompoundTag, StringTag
