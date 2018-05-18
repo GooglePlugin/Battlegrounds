@@ -2,6 +2,7 @@
 
 namespace Battlegrounds\entity;
 
+use pocketmine\nbt\NBT;
 use pocketmine\nbt\tag\{
   ListTag, FloatTag, DoubleTag, CompoundTag, StringTag
 };
