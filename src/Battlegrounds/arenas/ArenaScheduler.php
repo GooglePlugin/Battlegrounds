@@ -37,10 +37,10 @@ class ArenaScheduler extends Task {
         $this->arena = $arena;
         $this->startTime = $this->arena->data['arena']['starting_time'];
         $this->mainTime = $this->arena->data['arena']['max_game_time'];
-        $this->line1 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_1']);
-        $this->line2 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_2']);
-        $this->line3 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_3']);
-        $this->line4 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_4']);
+        $this->line1 = str_replace("&", "§", $this->arena->data['signs']['status_line_1']);
+        $this->line2 = str_replace("&", "§", $this->arena->data['signs']['status_line_2']);
+        $this->line3 = str_replace("&", "§", $this->arena->data['signs']['status_line_3']);
+        $this->line4 = str_replace("&", "§", $this->arena->data['signs']['status_line_4']);
         if(!$this->arena->plugin->getServer()->isLevelGenerated($this->arena->data['signs']['join_sign_world'])){
             $this->arena->plugin->getServer()->generateLevel($this->arena->data['signs']['join_sign_world']);
             $this->arena->plugin->getServer()->loadLevel($this->arena->data['signs']['join_sign_world']);
