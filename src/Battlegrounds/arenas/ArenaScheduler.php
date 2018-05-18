@@ -1,6 +1,6 @@
 <?php
 
-namespace Battlegrounds\arena;
+namespace Battlegrounds\arenas;
 
 use pocketmine\scheduler\Task;
 use pocketmine\tile\Sign;
