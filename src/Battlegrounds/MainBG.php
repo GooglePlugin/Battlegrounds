@@ -596,11 +596,13 @@ class MainBG extends PluginBase implements Listener {
             
             public function onQuit(PlayerQuitEvent $e) {
                 $p = $e->getPlayer();
+		$this->getServer()->getScheduler()->scheduleDelayedTask(new BattleParticle($this, $p), 20);
                 $this->unsetPlayers($p);
             }
             
             public function onKick(PlayerKickEvent $e) {
                 $p = $e->getPlayer();
+		$this->getServer()->getScheduler()->scheduleDelayedTask(new BattleParticle($this, $p), 20);
                 $this->unsetPlayers($p);
             }
             
