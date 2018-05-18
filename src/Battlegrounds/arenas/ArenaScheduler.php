@@ -1,15 +1,16 @@
 <?php
 
-namespace Battlegrounds\arenas;
+namespace Battlegrounds\arena;
 
 use pocketmine\scheduler\Task;
 use pocketmine\tile\Sign;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat;
-use Battlegrounds\arenas\Arena;
 use pocketmine\math\Vector3;
 
-class ArenaScheduler extends Task {
+use Battlegrounds\arenas\Arena;
+
+class ArenaSchedule extends Task {
     
     private $mainTime;
     private $time = 0;
@@ -18,14 +19,14 @@ class ArenaScheduler extends Task {
     private $ending = false;
     private $mins = 9;
     private $secs = 60;
-    private $gameStart = 10;
+	private $gameStart = 10;
     private $arenaResetTime = 5;
 	
     private $forcestart = false;
     
     private $arena;
     
-    # Sign Lines #
+    # Line of Signs
     private $level;
     private $line1;
     private $line2;
@@ -36,10 +37,10 @@ class ArenaScheduler extends Task {
         $this->arena = $arena;
         $this->startTime = $this->arena->data['arena']['starting_time'];
         $this->mainTime = $this->arena->data['arena']['max_game_time'];
-        $this->line1 = str_replace("&", "§", $this->arena->data['signs']['status_line_1']);
-        $this->line2 = str_replace("&", "§", $this->arena->data['signs']['status_line_2']);
-        $this->line3 = str_replace("&", "§", $this->arena->data['signs']['status_line_3']);
-        $this->line4 = str_replace("&", "§", $this->arena->data['signs']['status_line_4']);
+        $this->line1 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_1']);
+        $this->line2 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_2']);
+        $this->line3 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_3']);
+        $this->line4 = str_replace("&", "Β§", $this->arena->data['signs']['status_line_4']);
         if(!$this->arena->plugin->getServer()->isLevelGenerated($this->arena->data['signs']['join_sign_world'])){
             $this->arena->plugin->getServer()->generateLevel($this->arena->data['signs']['join_sign_world']);
             $this->arena->plugin->getServer()->loadLevel($this->arena->data['signs']['join_sign_world']);
@@ -49,13 +50,13 @@ class ArenaScheduler extends Task {
         }
     }
     
-    public function onRun($currentTick){
+    public function onRun(int $currentTick){
 		
         if(strtolower($this->arena->data['signs']['enable_status']) === 'true'){
             $this->updateTime++;
             if($this->updateTime >= $this->arena->data['signs']['sign_update_time']){
                 $vars = ['%alive', '%dead', '%status', '%max', '&'];
-                $replace = [count(array_merge($this->arena->ingamep, $this->arena->lobbyp)), count($this->arena->deads), $this->arena->getStatus(), $this->arena->getMaxPlayers(), "§"];
+                $replace = [count(array_merge($this->arena->ingamep, $this->arena->lobbyp)), count($this->arena->deads), $this->arena->getStatus(), $this->arena->getMaxPlayers(), "Β§"];
 
                 $tile = $this->arena->plugin->getServer()->getLevelByName($this->arena->data['signs']['join_sign_world'])->getTile(new Vector3($this->arena->data['signs']['join_sign_x'], $this->arena->data['signs']['join_sign_y'], $this->arena->data['signs']['join_sign_z']));
                 if($tile instanceof Sign){
@@ -65,9 +66,7 @@ class ArenaScheduler extends Task {
             }
         }
         
-		
         if($this->arena->game === 0){
-			
             if(count($this->arena->lobbyp) >= $this->arena->getMinPlayers() || $this->forcestart === true){
 				
                 $this->startTime--;
@@ -75,7 +74,6 @@ class ArenaScheduler extends Task {
 				$this->gameStart = 10;
 				$this->mins = 9;
 				$this->secs = 60;
-
 				
 				foreach($this->arena->lobbyp as $p){
 					
@@ -104,13 +102,11 @@ class ArenaScheduler extends Task {
             }
         }
 		
-		
         if($this->arena->game === 1){
             $this->startTime = $this->arena->data['arena']['starting_time'];
 			$this->gameStart--;
             $this->mainTime--;
             $this->secs--;
-
 
             foreach($this->arena->ingamep as $p){ 
                 $p->sendPopup(TextFormat::GREEN . "\n[" . $this->mins . ":" . $this->secs . "]\nMagnetic Field: " . $this->arena->magneticFieldX . "x" . $this->arena->magneticFieldZ);
@@ -122,15 +118,13 @@ class ArenaScheduler extends Task {
 
 			if($this->gameStart >= 2){
 				foreach($this->arena->lobbyp as $p){
-					$p->addTitle(TextFormat::GREEN . "Prepare for your wings!", TextFormat::RED . $this->gameStart, 20, 20, 20);
-                    $p->addSubtitle(TextFormat::WHITE . "Ready, players!");
+					$p->addTitle(TextFormat::GREEN . "Prepare to Jump", TextFormat::RED . $this->gameStart, 20, 20, 20);
 				}
 		    }
 			
 			if($this->gameStart == 1){
 				foreach($this->arena->lobbyp as $p){
-					$p->addTitle(TextFormat::GREEN . "The game has begins!", "", 20, 20, 20);
-                                        $p->addSubtitle(TextFormat::WHITE . "Fly to grounds!");
+					$p->addTitle(TextFormat::GREEN . "Jump Now", "", 20, 20, 20);
 				}
 		    }
 			
@@ -150,19 +144,19 @@ class ArenaScheduler extends Task {
 				$this->arena->removeSpawnBlocks();
 			}
 			
-			// 8 mins
+			// 8 minutes task \\
 			if($this->mainTime === 480){
 				$this->arena->magneticFieldX = 101;
 				$this->arena->magneticFieldZ = 101;
 			}
 			
-			// 5 mins
+			// 5 minutes task \\
 			if($this->mainTime === 300){
 				$this->arena->magneticFieldX = 51;
 				$this->arena->magneticFieldZ = 51;
 			}
 			
-			// 2 mins
+			// 2 minutes task \\
 			if($this->mainTime === 120){
 				$this->arena->magneticFieldX = 31;
 				$this->arena->magneticFieldZ = 31;
@@ -171,7 +165,7 @@ class ArenaScheduler extends Task {
             if($this->mainTime === 0){
  
                     foreach($this->arena->ingamep as $p){                      
-						$p->addTitle(TextFormat::AQUA. "Oops, time's up! I think there are no winners!", "", 20, 40, 20);
+						$p->addTitle("Oh no, there are no winners in this game!", "", 20, 40, 20);
                     }
                 $this->arena->stopGame();
                
