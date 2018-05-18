@@ -71,7 +71,7 @@ class Arena implements Listener {
     }
     
     public function enableScheduler() {
-        $this->plugin->getServer()->getScheduler()->scheduleRepeatingTask(new ArenaSchedule($this), 20);
+        $this->plugin->getServer()->getScheduler()->scheduleRepeatingTask(new ArenaScheduler($this), 20);
     }
     
     public function tapJoinSign(PlayerInteractEvent $e) {
