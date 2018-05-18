@@ -17,8 +17,9 @@ currently on public!
 >
 > - Zadezter and MrLukePotatoes<br>
 > @ (Leads of [ImpladeDeveloped](http://github.com/ImpladeDeveloped) team)<br>
-> - FreeGamingHere
-> @ Helper (Helped us leak the plugin)
+> 
+> - FreeGamingHere (YouTuber)<br>
+> @ (A man who helped us to leak the plugin!)<br>
 >  I have some allies here.
 
 **TO-DO**
@@ -27,6 +28,7 @@ currently on public!
 - [x] Finding an errors!
 
 ```
-Don't tell your favourite friend's dev, okay? JK.
+This plugin is from the scammer developer,<br>
+(SonsaYT, as his former name is FreakingDev)
 😂😂 Updated on 16 May 2018 😂😂
 ```
