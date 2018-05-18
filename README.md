@@ -15,10 +15,10 @@ currently on public!
 > Battlegrounds texture pack's download link to there<br>
 > and add and edit the configurations!
 >
-> - Zadezter and MrLukePotatoes<br>
+> - [Zadezter](http://github.com/Zadezter) and [MrLukePotatoes](http://github.com/MrLukePotatoes)<br>
 > @ (Leads of [ImpladeDeveloped](http://github.com/ImpladeDeveloped) team)<br>
 > 
-> - FreeGamingHere (YouTuber)<br>
+> - [FreeGamingHere](http://github.com/FreeGamingHere) (YouTuber)<br>
 > @ (A man who helped us to leak the plugin!)<br>
 >  I have some allies here.
 
@@ -30,5 +30,5 @@ currently on public!
 ```
 This plugin is from the scammer developer,
 (SonsaYT, as his former name is FreakingDev)
-😂😂 Updated on 16 May 2018 😂😂
+😂😂 Updated on 18 May 2018 😂😂
 ```
