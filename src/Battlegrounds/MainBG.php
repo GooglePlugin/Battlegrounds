@@ -20,7 +20,7 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerKickEvent;
 use pocketmine\plugin\Plugin;
 
-use Battlegrounds\arena\Arena;
+use Battlegrounds\arenas\Arena;
 use Battlegrounds\ConfigManager;
 
 class MainBG extends PluginBase implements Listener {
