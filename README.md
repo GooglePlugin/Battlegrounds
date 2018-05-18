@@ -17,6 +17,8 @@ currently on public!
 >
 > - Zadezter and MrLukePotatoes<br>
 > @ (Leads of [ImpladeDeveloped](http://github.com/ImpladeDeveloped) team)<br>
+> - FreeGamingHere
+> @ Helper (Helped us leak the plugin)
 >  I have some allies here.
 
 **TO-DO**
