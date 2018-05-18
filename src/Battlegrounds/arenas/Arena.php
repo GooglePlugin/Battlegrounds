@@ -3,6 +3,7 @@
 namespace Battlegrounds\arenas;
 
 use Battlegrounds\MainBG;
+use Battlegrounds\entity\DeathAnimation;
 
 use pocketmine\Player;
 use pocketmine\event\Listener;
@@ -39,6 +40,7 @@ use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\level\sound\BlazeShootSound;
 use pocketmine\math\Vector3;
 use pocketmine\utils\TextFormat;
+use pocketmine\level\particle\DestroyBlockParticle as BloodParticle;
 use onebone\economyapi\EconomyAPI;
 
 class Arena implements Listener {
@@ -796,7 +798,8 @@ class Arena implements Listener {
                 $p1 = $e->getDamager();
                 $p2 = $e->getEntity();
                 if ($this->getPlayerMode($p2) === 1 && $e->getCause() === EntityDamageEvent::CAUSE_PROJECTILE) {
-                    $item = $p1->getInventory()->getItemInHand();
+		$item = $p1->getInventory()->getItemInHand();
+                $event->getEntity()->getLevel()->addParticle(new BloodParticle($event->getEntity(), Block::get(152)));
                     if ($item->getId() == 284 && $item->getCustomName() == TextFormat::AQUA . "AK47") {
                         $e->setDamage(5);
                     }
@@ -837,6 +840,7 @@ class Arena implements Listener {
                 }
                 unset($this->ingamep[strtolower($p->getName()) ]);
                 $this->spec[strtolower($p->getName()) ] = $p;
+		Entity::createEntity("DeathAnimation", $p->getLevel(), new CompoundTag(), $p)->spawnToAll();
                 $ingame = array_merge($this->lobbyp, $this->ingamep, $this->spec);
                 foreach ($ingame as $pl) {
                     $pl->sendMessage($this->plugin->getPrefix() . str_replace(['%2', '%1'], [count($this->ingamep), $p->getName() ], $this->plugin->getMsg('death')));
