@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Battlegrounds\arenas;
 
 use Battlegrounds\MainBG;
-use Battlegrounds\entity\DeathAnimation;
+use Battlegrounds\ConfigManager;
+use Battlegrounds\BattleParticle;
 
 use pocketmine\Player;
 use pocketmine\event\Listener;
@@ -22,6 +25,7 @@ use pocketmine\event\entity\ProjectileHitEvent;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\network\mcpe\protocol\PlayerActionPacket;
 use pocketmine\block\Block;
+use pocketmine\entity\Human;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
 use pocketmine\entity\Entity;
@@ -59,7 +63,7 @@ class Arena implements Listener {
     public $deads = [];
     public $setup = false;
     
-    public function __construct($id, BattleGround $plugin) {
+    public function __construct($id, Battlegrounds $plugin) {
         $this->id = $id;
         $this->plugin = $plugin;
         $this->data = $plugin->arenas[$id];
@@ -840,7 +844,15 @@ class Arena implements Listener {
                 }
                 unset($this->ingamep[strtolower($p->getName()) ]);
                 $this->spec[strtolower($p->getName()) ] = $p;
-		Entity::createEntity("DeathAnimation", $p->getLevel(), new CompoundTag(), $p)->spawnToAll();
+	
+		$nbt = Entity::createBaseNBT($player, null, $player->getYaw(), $player->getPitch());
+                  $nbt->setTag($player->namedtag->getTag("Skin"));
+                  $npc = new Human($player->getLevel(), $nbt);
+                  $npc->getDataPropertyManager()->setBlockPos(Human::DATA_PLAYER_FLAG_SLEEP, new Vector3($player->getX(), $player->getY(), $player->getZ()));
+                  $npc->setPlayerFlag(Human::DATA_PLAYER_FLAG_SLEEP, \true);
+                  $npc->setNameTag("$name");
+                  $npc->setNameTagVisible($type);
+                 $npc->spawnTo($player);
 		$this->getServer()->getScheduler()->scheduleDelayedTask(new BattleParticle($this, $p), 20);
                 $ingame = array_merge($this->lobbyp, $this->ingamep, $this->spec);
                 foreach ($ingame as $pl) {
