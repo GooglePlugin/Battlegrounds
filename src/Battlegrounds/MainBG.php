@@ -81,12 +81,23 @@ class MainBG extends PluginBase implements Listener {
         if (!is_file($this->getDataFolder() . "languages/English.yml")) {
             $this->saveResource("languages/English.yml");
         }
-        if (!is_file($this->getDataFolder() . "languages/Czech.yml")) {
-            $this->saveResource("languages/Czech.yml");
+        if (!is_file($this->getDataFolder() . "languages/Malay.yml")) {
+            $this->saveResource("languages/Malay.yml");
+        }
+        if (!is_file($this->getDataFolder() . "languages/Tagalog.yml")) {
+        $this->saveResource("languages/Czech.yml");
         }
         if (!is_file($this->getDataFolder() . "languages/{$this->cfg->get('Language') }.yml")) {
             $this->msg = new Config($this->getDataFolder() . "languages/English.yml", Config::YAML);
-            $this->getServer()->getLogger()->info("Selected language English");
+            $this->getServer()->getLogger()->info("[English] Selected language English");
+        }
+	if (!is_file($this->getDataFolder() . "languages/{$this->cfg->get('Language') }.yml")) {
+            $this->msg = new Config($this->getDataFolder() . "languages/Malay.yml", Config::YAML);
+            $this->getServer()->getLogger()->info("[Malay] Bahasa Melayu telah dipilih");
+        }
+	if (!is_file($this->getDataFolder() . "languages/{$this->cfg->get('Language') }.yml")) {
+            $this->msg = new Config($this->getDataFolder() . "languages/Tagalog.yml", Config::YAML);
+            $this->getServer()->getLogger()->info("[Tagalog] Piniling wika Tagalog");
         } else {
             $this->msg = new Config($this->getDataFolder() . "languages/{$this->cfg->get('Language') }.yml", Config::YAML);
             $this->getServer()->getLogger()->info("Selected language {$this->cfg->get('Language') }");
@@ -94,7 +105,7 @@ class MainBG extends PluginBase implements Listener {
     }
     
     public function checkArenas() {
-        $this->getLogger()->info("checking arena files...");
+        $this->getLogger()->info("Checking all arena files...");
         foreach (glob($this->getDataFolder() . "arenas/*.yml") as $file) {
             $arena = new Config($file, Config::YAML);
             if (strtolower($arena->get("enabled")) === "false") {
@@ -104,12 +115,12 @@ class MainBG extends PluginBase implements Listener {
                 if ($this->checkFile($arena) === true) {
                     $fname = basename($file);
                     $this->setArenasData($arena, basename($file, ".yml"));
-                    $this->getLogger()->info("$fname - " . TextFormat::GREEN . "checking sucessful");
+                    $this->getLogger()->info("$fname - " . TextFormat::GREEN . "Arena file has successfully checked.");
                 } else {
                     $this->arenas[basename($file, ".yml") ] = $arena->getAll();
                     $this->arenas[basename($file, ".yml") ]['enable'] = false;
                     $fname = basename($file, ".yml");
-                    $this->getLogger()->error("Arena \"$fname\" is not set properly");
+                    $this->getLogger()->error("Arena \"$fname\" is not set properly.");
                 }
             }
         }
