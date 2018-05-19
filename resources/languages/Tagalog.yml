@@ -1,1 +1,124 @@
 ## Only MrLukePotatoes know a Tagalog ##
+---
+join: "&bAndito na tayo sa Battlegrounds!"
+join_others: "si %1 &bnagsali!"
+leave: "Magaalis ka na. "
+leave_others: "si %1 §cay Umalis!"
+arena_doesnt_exist: "&cWala naman arena!"
+arena_already_exist: "&cMeron naman arena na tulad nito!"
+arena_create: "&eNagawa na ang arena! "
+start_game: "&l&eMagtutuna na ang Game! Magready ka!"
+death: "&cSi %1 ay napatay! &f%2 nalang ang nabubuhay!"
+send_to_main_world: "&eMagbabalik ka na sa lobby..."
+starting: "&aMagtutuna na ang laro: §f%1 §aseconds....."
+kick_from_game: "&cInalis ka sa laro kasi %1"
+game_full: "&cPuno na ang laro!"
+ingame: "&cNagaandar pa ang laro!"
+enable_setup_mode: "&6Andito ka na sa setup mode!\n&f- &aTulong? type §d'help' \n&f- §aKung gusto mo na umalis sa setup mode, type §b'done'"
+disable_setup_mode: '&aNasaved na ang arena!'
+arena_in_setup: "&cAng arena na ito ay nasa setup mode na! !"
+# Rewards for Winner
+get_money: "&aMay reward ka na %1 na pera"
+# End game messages
+# Create a new line using "\n"
+end_game: "&a1. %2"
+not_enough_players: "&cKailangan pa natin ng madaming tao"
+
+###################
+# Commands Messages
+###################
+has_not_permission: "&cYou do not have permission to use this command!"
+
+# Invalid Arguments on Setup Mode #
+invalid_arguments: "&cType §f'§ehelp§f' §cpara sa tulong sa setup mode!"
+help: "&6Battlegrounds §fcommand usage: /bg help"
+join_help: "&6/bg sali &a[arena name]"
+leave_help: "&6/bg alis &a[arena name]"
+start_help: "&6/bg andarin &a[arena name]"
+stop_help: "&6 /bg taposin &a[arena name]"
+kick_help: "&6 /bg patayin &a[arena name] [player name]"
+set_help: "&6 /bg set &a[arena name]"
+create_help: "&6 /bg gawa &a[arena name]"
+delete_help: "&6 /bg alisin &a[arena name]"
+setlobby_help: "&6Type: &asetlobby"
+arena_running: "&Nagaandar pa ang laro!"
+use_cmd_in_game: "&6Pwede mo gamitin ang command sa laro"
+arena_not_running: "&6Hindi umaandar ang laro!"
+player_not_exist: "&cWala ang tao sa laro!"
+
+##########################
+# Done Setup Mode Messages #
+##########################
+joinsign: "&aJoin sign has been successfully updated!"
+returnsign: "&aLeave sign has been successfully updated!"
+startpos: "&aStart position has been successfully updated!"
+lobbypos: "&aLobby position has been successfully updated!"
+spectatorspawn: "&aSpectator spawn has been successfully updated!"
+leavepos: "&aLeave position has been successfully updated!"
+mainlobby: "&aMain lobby position has been successfully updated!"
+statusline: "&aSign line has been successfully updated!"
+type: "&aArena type has been successfully updated!"
+allowstatus: "&aStatus sign has been successfully updated!"
+signupdatetime: "&aSign update interval has been successfully updated!"
+world: "&aArena world has been successfully updated!"
+allowspectator: "&aSpectator mode has been successfully updated!"
+maxtime: "&aGame max time has been successfully updated!"
+maxplayers: "&aMax players count has been successfully updated!"
+minplayers: "&aMin players count has been successfully updated!"
+starttime: "&aStart time has been successfully updated!"
+time: "&aArena time has been successfully updated!"
+enable: "&aArena has been successfully updated!"
+
+########################################
+# Message Commands While On Setup Mode #
+########################################
+statusline_help: "&6Type: &astatusline &b[line] [text]"
+allowstatus_help: "&6Type: &aallowstatus &b[true/false]"
+signupdatetime_help: "&6Type: &asignupdatetime &b[seconds]"
+world_help: "&6Type: &aworld &b[world name]"
+allowspectator_help: "&6Type: &aallowspectator &b[true/false]"
+maxtime_help: "&6Type: &amaxtime &b[seconds]"
+maxplayers_help: "&6Type: &amaxplayers &b[amount]"
+minplayers_help: "&6Type: &aminplayers &b[amount]"
+starttime_help: "&6Type: &astarttime &b[seconds]"
+time_help: "&6Type: &atime &b[true/day/night/TICKS]"
+enable_help: "&6Type: &aenable &b[true/false]"
+
+##################################
+# Battlegrounds Help Command Messages #
+##################################
+lobby: "\n- &2/bg lobby &l&5»&r&f Magteteleport sa lobby"
+onleave: "\n- &2/bg leave &l&5»&r&f Magaalis the arena"
+onjoin: "\n- &2/bg join &b[arena name] &l&5»&r&f Magsasali sa Laro"
+start: "\n- &2/bg start &b[arena name] &l&5»&r&f Iaandar ang laro"
+stop: "\n- &2/bg stop &b[arena name] &l&5»&r&f Ipapatapos ang Laro"
+kick: "\n- &2/bg kick &b[arena name] [player name] [reason] &l&5»&r&f Alisin ang tao sa lado"
+set: "\n- &2/bg set &b[arena name] &l&5»&r&f Set or modify arena"
+delete: "\n- &2/bg delete &b[arena name] &l&5»&r&f Delete existing arena"
+create: "\n- &2/bg create &b[arena name] &l&5»&r&f Create new arena"
+
+########################################
+# Arena Setup + Command Messages
+########################################
+help_joinsign: "\n- &2joinsign &l&5»&r&f Set join sign position"
+help_returnsign: "\n- &2returnsign &l&5»&r&f Set leave sign position"
+help_startpos: "\n- &2startpos &l&5»&r&f Set start game position"
+help_lobbypos: "\n- &2lobbypos &l&5»&r&f Set lobby position"
+help_spectatorspawn: "\n- &2spectatorspawn &l&5»&r&f Set spectator spawn"
+help_leavepos: "\n- &2leavepos &l&5»&r&f Set leave position"
+help_time: "\n- &2time &b[true/day/night/ticks] &l&5»&r&f Set time in arena"
+help_type: "\n- &2type &b[classic/furious/stoned] &l&5»&r&f Set arena type"
+help_allowstatus: "\n- &2allowstatus &b[true/false] &l&5»&r&f Enable/disable status on join sign"
+help_world: "\n- &2world &b[world name] &l&5»&r&f Set arena world"
+help_statusline: "\n- &2statusline &b[line (1-4)] [text] &l&5»&r&f Set status sign line"
+help_allowspectator: "\n- &2allowspectator &b[true/false] &l&5»&r&f Enable/Disable spectator mode"
+help_signupdatetime: "\n- &2signupdatetime &b[seconds] &l&5»&r&f Set sign update interval"
+help_maxtime: "\n- &2maxtime &b[seconds] &l&5»&r&f Set max game time"
+help_maxplayers: "\n- &2maxplayers &b[count] &l&5»&r&f Set max players in game"
+help_minplayers: "\n- &2minplayers &b[count] &l&5»&r&f Set players minimal count required to start the game"
+
+######################
+# Other setup messages #
+######################
+break_block: "&aFind and break a block!"
+break_sign: "&aFind and break a sign!"
