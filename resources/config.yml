@@ -6,9 +6,18 @@
 ---
 
 ##### ## ####
-# Language & Prefix
+# Language
+##### ## ####
+## Available Language:
+## 1. English
+## 2. Malay
+## 3. Tagalog
 ##### ## ####
 Language: "English"
+
+##### ## ####
+# Prefix
+##### ## ####
 Prefix: "&9[&cBG&9] "
 
 ##### ## ####
