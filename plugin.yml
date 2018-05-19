@@ -1,5 +1,5 @@
 name: Battlegrounds
-version: BG-1.1
+version: BG-1.2
 api: [3.0.0-ALPHA12]
 main: Battlegrounds\MainBG
 author: Zadezter(Leader), ImpladeDeveloped(Team), MrLukePotatoes(2nd-Leader)
